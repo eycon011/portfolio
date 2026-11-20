@@ -1,0 +1,590 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES GLOBAIS (TEMA DARK / AZUL METÁLICO)
+   ========================================================================== */
+:root {
+    --bg-primary: #070a10;
+    --bg-secondary: #0c121e;
+    --bg-card: #111827;
+    --bg-card-hover: #162033;
+    --border-color: #1e293b;
+    --border-accent: #2563eb;
+    
+    --blue-metallic: #1d4ed8;
+    --blue-bright: #3b82f6;
+    --blue-glow: rgba(37, 99, 235, 0.22);
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    --radius: 12px;
+    --transition: all 0.25s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container centralizado padrão */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Classe auxiliar caso o script.js utilize ocultação por classe */
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   1. CABEÇALHO E NAVEGAÇÃO (NAVBAR)
+   ========================================================================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(7, 10, 16, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+}
+
+.nav-brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-brand:hover {
+    color: var(--blue-bright);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.75rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--blue-bright);
+}
+
+/* ==========================================================================
+   2. HERO SECTION (1 COLUNA CENTRALIZADA SEM FOTO)
+   ========================================================================== */
+.hero {
+    padding: 6rem 0 5rem;
+    background: radial-gradient(circle at top center, rgba(29, 78, 216, 0.16) 0%, transparent 65%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.hero-info {
+    max-width: 760px;
+    text-align: center;
+}
+
+.badge-java {
+    display: inline-block;
+    background-color: rgba(29, 78, 216, 0.18);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    padding: 0.35rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.hero-greeting {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.hero-info h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--text-primary);
+}
+
+.hero-age {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.hero-role {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--blue-bright);
+    margin: 0.75rem 0 1.25rem;
+}
+
+.hero-headline {
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    max-width: 640px;
+    margin: 0 auto 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Botões padrão */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--blue-metallic);
+    color: #ffffff;
+    border: 1px solid var(--blue-bright);
+    box-shadow: 0 4px 16px var(--blue-glow);
+}
+
+.btn-primary:hover {
+    background-color: var(--blue-bright);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--blue-bright);
+    background-color: rgba(59, 130, 246, 0.08);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. ESTRUTURA GERAL DAS SEÇÕES E CARDS
+   ========================================================================== */
+.section {
+    padding: 4.5rem 0;
+}
+
+.section-alt {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.65rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-metallic), var(--blue-bright));
+    border-radius: 2px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: var(--transition);
+}
+
+.card:hover {
+    border-color: rgba(59, 130, 246, 0.45);
+    background-color: var(--bg-card-hover);
+}
+
+/* ==========================================================================
+   4. EXPERIÊNCIA E SOBRE MIM
+   ========================================================================== */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.company-name {
+    color: var(--blue-bright);
+    font-weight: 600;
+    font-size: 0.98rem;
+    margin-top: 0.2rem;
+}
+
+.status-tag {
+    background-color: rgba(29, 78, 216, 0.2);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.experience-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.experience-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.experience-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--blue-bright);
+    font-weight: bold;
+}
+
+.experience-list strong,
+.about-card strong {
+    color: var(--text-primary);
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    font-size: 1.02rem;
+}
+
+.about-card p + p {
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   5. HARD SKILLS (COM CARD JAVA EM DESTAQUE)
+   ========================================================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.skill-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card-top h3 {
+    margin-bottom: 0;
+}
+
+/* Destaque exclusivo para o card de Backend / Java */
+.skill-java-featured {
+    border-color: var(--border-accent);
+    background: linear-gradient(160deg, #111827 0%, #0f1d3a 100%);
+    box-shadow: 0 6px 24px rgba(29, 78, 216, 0.15);
+}
+
+.tag-core {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: var(--blue-metallic);
+    color: #ffffff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+}
+
+.skill-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.skill-tags li {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+}
+
+.skill-tags li.tag-java-main {
+    background-color: rgba(29, 78, 216, 0.25);
+    border-color: var(--blue-bright);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   6. PROJETOS E FILTRO INTERATIVO
+   ========================================================================== */
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.projects-header .section-title {
+    margin-bottom: 0;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    border-color: var(--blue-bright);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background-color: var(--blue-metallic);
+    border-color: var(--blue-bright);
+    color: #ffffff;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-tech-label {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    margin-bottom: 0.9rem;
+}
+
+.project-tech-label.tech-java {
+    background-color: rgba(29, 78, 216, 0.22);
+    border-color: var(--blue-bright);
+    color: #93c5fd;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.65rem;
+    color: var(--text-primary);
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--blue-bright);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: var(--transition);
+}
+
+.project-link::after {
+    content: "→";
+    margin-left: 0.4rem;
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover {
+    color: #93c5fd;
+}
+
+.project-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   7. FALE COMIGO E RODAPÉ
+   ========================================================================== */
+.contact-subtitle {
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin-bottom: 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    text-decoration: none;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.contact-card h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.35rem;
+}
+
+.contact-card p {
+    color: var(--blue-bright);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--blue-bright);
+}
+
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (TELAS MENORES / CELULARES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        padding: 0.85rem 1.5rem;
+        gap: 0.75rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-info h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-role {
+        font-size: 1.15rem;
+    }
+
+    .card-header {
+        flex-direction: column;
+    }
+}
